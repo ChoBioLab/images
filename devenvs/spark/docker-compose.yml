@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+    rstudio-server:
+        env_file:
+            - .env
+        container_name: rstudio-server
+        image: user/rstudio:4.2.1
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - "${RENV_PATHS_CACHE_HOST}:${RENV_PATHS_CACHE_CONTAINER}"
+            - "/home/chris/Downloads:/data"
+        ports:
+            - "8787:8787"
+        restart: always
+
