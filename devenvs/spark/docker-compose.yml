@@ -1,18 +1,17 @@
 version: '3.9'
 
 services:
-    rstudio-server:
+    baseline:
         env_file:
             - .env
-        container_name: rstudio-server
-        image: user/rstudio:4.2.1
+        container_name: chris
+        image: r-ver-4.2.1
         build:
             context: .
             dockerfile: Dockerfile
         volumes:
             - "${RENV_PATHS_CACHE_HOST}:${RENV_PATHS_CACHE_CONTAINER}"
-            - "/mnt/cho_lab/disk2:/data"
-        ports:
-            - "8787:8787"
+            - "/mnt/cho_lab/disk2:/mnt/cho_lab/disk2"
+        tty: true
         restart: always
 
