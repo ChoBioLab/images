@@ -11,7 +11,8 @@ services:
             dockerfile: Dockerfile
         volumes:
             - "${RENV_PATHS_CACHE_HOST}:${RENV_PATHS_CACHE_CONTAINER}"
-            - "/mnt/cho_lab/disk2:/mnt/cho_lab/disk2"
+            - "/mnt/cho_lab/disk2:/disk2"
+            - "./DESCRIPTION:/project/DESCRIPTION"
         tty: true
         restart: always
 
