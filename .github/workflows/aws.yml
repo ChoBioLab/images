@@ -32,8 +32,9 @@ on:
 
 env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: public.ecr.aws/c8r7r8g5/chobiolab           # set this to your Amazon ECR repository name
+  ECR_REPOSITORY: chobiolab           # set this to your Amazon ECR repository name
   CONTAINER_NAME: base-r-4.2.1           # set this to the name of the container in the
+  ECR_REGISTRY: public.ecr.aws/c8r7r8g5
 
 permissions:
   contents: read
@@ -62,7 +63,7 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
-        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        #ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
