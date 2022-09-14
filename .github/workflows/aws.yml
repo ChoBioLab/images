@@ -33,9 +33,7 @@ on:
 env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: chobiolab           # set this to your Amazon ECR repository name
-                                               # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: base-r-4.2.1           # set this to the name of the container in the
-                                               # containerDefinitions section of your task definition
 
 permissions:
   contents: read
@@ -68,7 +66,8 @@ jobs:
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
-        # push it to ECR
+        # push it to ECR so that it can
+        # be deployed to ECS.
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
