@@ -1,5 +1,7 @@
 FROM rocker/r-ver:4.2.1
 
+MAINTAINER christopher.tastad@mssm.edu
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     cmake \
@@ -18,6 +20,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && R -q -e 'install.packages("curl")'
 
+VOLUME "${RENV_PATHS_CACHE_HOST}:${RENV_PATHS_CACHE_CONTAINER}"
 ENV RENV_VERSION 0.15.5
 
 RUN R -e "install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))"
@@ -25,9 +28,7 @@ RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 
 WORKDIR /depend
 COPY renv.lock renv.lock
-COPY DESCRIPTION DESCRIPTION
 
 ENV RENV_PATHS_LIBRARY renv/library
 RUN R -e "renv::restore()"
-RUN R -e "renv::install()"
 
