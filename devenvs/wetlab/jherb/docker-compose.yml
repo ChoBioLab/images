@@ -9,6 +9,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - TAG=${TAG}
+        - R_VER=${R_VER}
     volumes:
       - "/mnt/cho_lab/disk2:/disk2"
       - "${USER_NAME}:/projects"

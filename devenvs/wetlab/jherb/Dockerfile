@@ -1,4 +1,7 @@
-FROM public.ecr.aws/c8r7r8g5/chobiolab/devenvs/r:r-4.2.1-e16f0bc
+ARG TAG
+ARG R_VER
+
+FROM public.ecr.aws/c8r7r8g5/chobiolab/devenvs/r:r-${R_VER}-${TAG}
 
 WORKDIR /dep
 COPY DESCRIPTION DESCRIPTION
