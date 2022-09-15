@@ -1,7 +1,0 @@
-# create a file named DESCRIPTION in the same directory as your Dockerfile
-# specify imports in the manner shown below
-
-Imports:
-  package1,
-  package2,
-  package3
