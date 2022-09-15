@@ -51,5 +51,5 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
       run: |
-        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:r-$RVER-$SHORT_SHA .
+        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:r-$RVER-$SHORT_SHA baseline-r
         docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:r-$RVER-$SHORT_SHA
