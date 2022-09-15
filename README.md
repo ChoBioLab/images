@@ -1,2 +1,2 @@
 # images
-development images for bioinformatics
+development images for bioinformatics.
