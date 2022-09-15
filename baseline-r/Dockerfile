@@ -31,4 +31,3 @@ COPY renv.lock renv.lock
 
 ENV RENV_PATHS_LIBRARY renv/library
 RUN R -e "renv::restore()"
-
