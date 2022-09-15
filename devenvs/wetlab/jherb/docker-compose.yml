@@ -1,22 +1,20 @@
 version: '3.9'
 
 services:
-  jherb:
+  devenv:
     env_file:
       - .env
-    container_name: jherb-base-r-4.2.1
-    image: r-4.2.1
+    container_name: ${USER_NAME}-r-dev
+    image: ${USER_NAME}-r${R_VER}
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - "${RENV_PATHS_CACHE_HOST}:${RENV_PATHS_CACHE_CONTAINER}"
       - "/mnt/cho_lab/disk2:/disk2"
-      - "jherb:/home/projects"
+      - "${USER_NAME}:/projects"
     tty: true
     restart: always
 
 volumes:
   jherb:
     external: true
-
