@@ -5,6 +5,7 @@ MAINTAINER christopher.tastad@mssm.edu
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     cmake \
+    pandoc \
     libcurl4-openssl-dev \
     libxml2-dev \
     zlib1g-dev \
