@@ -5,7 +5,7 @@ on:
     branches:
       - prod
     paths:
-      - 'baseline-r/**'
+      - 'devenvs/baseline-r/**'
 
 env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
