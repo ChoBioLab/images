@@ -18,6 +18,7 @@ RUN apt-get update \
     libgdal-dev \
     libgeos-dev \
     libhdf5-dev \
+    xclip \
     && rm -rf /var/lib/apt/lists/* \
     && R -q -e 'install.packages("curl")'
 
