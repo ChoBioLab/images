@@ -48,7 +48,7 @@
       "Package": "KernSmooth",
       "Version": "2.23-20",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "8dcfa99b14c296bc9f1fd64d52fd3ce7",
       "Requirements": []
     },
@@ -56,7 +56,7 @@
       "Package": "MASS",
       "Version": "7.3-57",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "71476c1d88d1ebdf31580e5a257d5d31",
       "Requirements": []
     },
@@ -64,7 +64,7 @@
       "Package": "Matrix",
       "Version": "1.4-1",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "699c47c606293bdfbc9fd78a93c9c8fe",
       "Requirements": [
         "lattice"
@@ -391,7 +391,7 @@
       "Package": "boot",
       "Version": "1.3-28",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "0baa960e3b49c6176a4f42addcbacc59",
       "Requirements": []
     },
@@ -494,7 +494,7 @@
       "Package": "class",
       "Version": "7.3-20",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "da09d82223e669d270e47ed24ac8686e",
       "Requirements": [
         "MASS"
@@ -520,7 +520,7 @@
       "Package": "cluster",
       "Version": "2.1.3",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "c5f8447373ec2a0f593c694024e5b7ee",
       "Requirements": []
     },
@@ -528,7 +528,7 @@
       "Package": "codetools",
       "Version": "0.2-18",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "019388fc48e48b3da0d3a76ff94608a8",
       "Requirements": []
     },
@@ -735,6 +735,14 @@
       "Hash": "cf6b206a045a684728c3267ef7596190",
       "Requirements": []
     },
+    "docopt": {
+      "Package": "docopt",
+      "Version": "0.7.1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "e9eeef7931ee99ca0093f3f20b88e09b",
+      "Requirements": []
+    },
     "downlit": {
       "Package": "downlit",
       "Version": "0.4.2",
@@ -889,7 +897,7 @@
       "Package": "foreign",
       "Version": "0.8-82",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "32b25c97ce306a760c4d9f787991b5d9",
       "Requirements": []
     },
@@ -1232,6 +1240,19 @@
         "yaml"
       ]
     },
+    "httpgd": {
+      "Package": "httpgd",
+      "Version": "1.3.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "81bb9c5c74fbe3ded849845e9a31bfd3",
+      "Requirements": [
+        "BH",
+        "cpp11",
+        "later",
+        "systemfonts"
+      ]
+    },
     "httpuv": {
       "Package": "httpuv",
       "Version": "1.6.6",
@@ -1392,7 +1413,7 @@
       "Package": "lattice",
       "Version": "0.20-45",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "b64cdbb2b340437c4ee047a1f4c4377b",
       "Requirements": []
     },
@@ -1455,6 +1476,15 @@
       "Hash": "0bde42ee282efb18c7c4e63822f5b4f7",
       "Requirements": []
     },
+    "littler": {
+      "Package": "littler",
+      "Version": "0.3.16",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "OS_type": "unix",
+      "Hash": "9c61d9adafa2370b132ea95c691ed314",
+      "Requirements": []
+    },
     "lmtest": {
       "Package": "lmtest",
       "Version": "0.9-40",
@@ -1507,7 +1537,7 @@
       "Package": "mgcv",
       "Version": "1.8-40",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "c6b2fdb18cf68ab613bd564363e1ba0d",
       "Requirements": [
         "Matrix",
@@ -1564,7 +1594,7 @@
       "Package": "nlme",
       "Version": "3.1-157",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "dbca60742be0c9eddc5205e5c7ca1f44",
       "Requirements": [
         "lattice"
@@ -1574,7 +1604,7 @@
       "Package": "nnet",
       "Version": "7.3-17",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "cb1d8d9f300a7e536b89c8a88c53f610",
       "Requirements": []
     },
@@ -1947,7 +1977,7 @@
       "Package": "remotes",
       "Version": "2.4.2",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "227045be9aee47e6dda9bb38ac870d67",
       "Requirements": []
     },
@@ -2083,7 +2113,7 @@
       "Package": "rpart",
       "Version": "4.1.16",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "ea3ca1d9473daabb3cd0f1b4f974c1ed",
       "Requirements": []
     },
@@ -2279,7 +2309,7 @@
       "Package": "spatial",
       "Version": "7.3-15",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "c23666fdb7789c8a45e65340bb334607",
       "Requirements": []
     },
@@ -2403,7 +2433,7 @@
       "Package": "survival",
       "Version": "3.3-1",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Hash": "f6189c70451d3d68e0d571235576e833",
       "Requirements": [
         "Matrix"
