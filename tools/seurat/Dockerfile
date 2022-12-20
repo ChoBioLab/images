@@ -35,4 +35,3 @@ RUN R -e "renv::restore()"
 
 RUN pip3 install MACS2==2.2.7.1
 
-ENTRYPOINT ["/app/main"]
