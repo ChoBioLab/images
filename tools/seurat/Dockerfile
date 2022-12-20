@@ -1,5 +1,8 @@
 FROM rocker/r-ver:4.2.1
 
+WORKDIR /app
+ADD . /app
+
 MAINTAINER christopher.tastad@mssm.edu
 
 RUN apt-get update \
