@@ -52,5 +52,6 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
       run: |
-        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY $BUILD_PATH
-        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY
+        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:r-$RVER-latest $BUILD_PATH
+        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:r-$RVER-latest
+
