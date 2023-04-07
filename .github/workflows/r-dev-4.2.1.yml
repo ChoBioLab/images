@@ -1,11 +1,11 @@
-name: Deploy to Amazon ECR
+name: Deploy r-dev to Amazon ECR
 
 on:
   push:
     branches:
       - prod
     paths:
-      - 'devenvs/r-dev/**'
+      - 'devenvs/r-dev/4.2.1/**'
 
 env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1

@@ -1,4 +1,4 @@
-name: Deploy to Amazon ECR
+name: Deploy cellphonedb to Amazon ECR
 
 on:
   push:
