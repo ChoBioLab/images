@@ -12,7 +12,7 @@ env:
   REGISTRY_ALIAS: chobiolab                # aws ecr public alias
   REPOSITORY: r-dev         # aws ecr repo path
   RVER: 4.2.1                             # version of R to pull
-  BUILD_PATH: devenvs/r-dev                  # dir location of build files in repo
+  BUILD_PATH: devenvs/r-dev/$RVER                  # dir location of build files in repo
 
 permissions:
   contents: read
