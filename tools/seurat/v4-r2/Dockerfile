@@ -23,7 +23,7 @@ RUN apt-get update \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install MACS2==3.0.0b1
+RUN pip3 install MACS3==3.0.0b1
 
 ENV RENV_VERSION 0.16.0
 ENV RENV_PATHS_CACHE_HOST=/opt/local/renv/cache
