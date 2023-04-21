@@ -5,7 +5,7 @@ on:
     branches:
       - prod
     paths:
-      - 'tools/seurat/**'
+      - 'tools/seurat/v4-r1/**'
 
 env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
@@ -52,5 +52,5 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
       run: |
-        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY $BUILD_PATH
-        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY
+        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:v4-r1 $BUILD_PATH
+        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:v4-r1
