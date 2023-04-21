@@ -23,10 +23,10 @@ RUN apt-get update \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install setuptools -U
+RUN pip3 install numpy
 RUN pip3 install MACS2==2.2.7.1
 
-ENV RENV_VERSION 0.15.5
+ENV RENV_VERSION 0.16.0
 ENV RENV_PATHS_CACHE_HOST=/opt/local/renv/cache
 ENV RENV_PATHS_CACHE_CONTAINER=/renv/cache
 ENV RENV_PATHS_CACHE=${RENV_PATHS_CACHE_CONTAINER}
