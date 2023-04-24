@@ -36,5 +36,5 @@ RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 ENV RENV_PATHS_LIBRARY renv/library
 RUN R -e "renv::restore()"
 
-RUN pip3 install MACS2==2.2.7.1
+RUN pip3 install MACS2==2.2.6
 
