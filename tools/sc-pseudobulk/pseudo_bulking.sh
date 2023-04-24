@@ -1,5 +1,5 @@
 #!/bin/bash
-input="/mnt/cho_lab/disk1/jiayuzh/tmp/nonT_Lymphoid_bam_loc.txt"
+input="/mnt/cho_lab/disk1/jiayuzh/tmp/nonT_Lymphoid_bam_loc.txt"    # output from barcodes_generation_combined_bins.R
 while IFS= read -r line
 do
     barcodes=$(echo $line | cut -d " " -f 1)
