@@ -23,6 +23,7 @@ RUN apt-get update \
     git \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip3 install numpy
 RUN pip3 install macs2==2.2.6
 
 ENV RENV_VERSION 0.16.0

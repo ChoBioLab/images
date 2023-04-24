@@ -36,5 +36,6 @@ RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 ENV RENV_PATHS_LIBRARY renv/library
 RUN R -e "renv::restore()"
 
+RUN pip3 install numpy
 RUN pip3 install macs2==2.2.6
 
