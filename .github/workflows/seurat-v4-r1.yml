@@ -1,18 +1,18 @@
-name: Deploy to Amazon ECR
+name: Deploy seurat to Amazon ECR
 
 on:
   push:
     branches:
       - prod
     paths:
-      - 'tools/seurat/**'
+      - 'tools/seurat/v4-r1/**'
 
 env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
-  REGISTRY_ALIAS: chobiolab                # aws ecr public alias
-  REPOSITORY: seurat      # aws ecr repo path
-  VER:                          # version of coreSC
-  BUILD_PATH: tools/seurat                 # dir location of build files in repo
+  REGISTRY_ALIAS: chobiolab               # aws ecr public alias
+  VER:                                    # version of coreSC
+  REPOSITORY: seurat                      # aws ecr repo path
+  BUILD_PATH: tools/seurat/v4-r1          # dir location of build files in repo
 
 permissions:
   contents: read
@@ -52,5 +52,5 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
       run: |
-        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY $BUILD_PATH
-        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY
+        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:v4-r1 $BUILD_PATH
+        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:v4-r1

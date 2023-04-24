@@ -1,18 +1,18 @@
-name: Deploy cellphonedb to Amazon ECR
+name: Deploy r-dev to Amazon ECR
 
 on:
   push:
     branches:
       - prod
     paths:
-      - 'tools/cellphoneDB/**'
+      - 'devenvs/r-dev/4.2.1/**'
 
 env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
   REGISTRY_ALIAS: chobiolab                # aws ecr public alias
-  REPOSITORY: cellphonedb      # aws ecr repo path
-  VER: 3.1.0                         # version of coreSC
-  BUILD_PATH: tools/cellphoneDB                 # dir location of build files in repo
+  REPOSITORY: r-dev         # aws ecr repo path
+  RVER: 4.2.1                             # version of R to pull
+  BUILD_PATH: devenvs/r-dev/4.2.1                  # dir location of build files in repo
 
 permissions:
   contents: read
@@ -52,5 +52,6 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
       run: |
-        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$VER $BUILD_PATH
-        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$VER
+        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:r-$RVER $BUILD_PATH
+        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:r-$RVER
+
