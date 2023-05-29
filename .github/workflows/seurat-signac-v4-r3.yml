@@ -11,7 +11,7 @@ env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
   REGISTRY_ALIAS: chobiolab               # aws ecr public alias
   VER:                                    # version of coreSC
-  REPOSITORY: seurat                      # aws ecr repo path
+  REPOSITORY: seurat-signac                      # aws ecr repo path
   BUILD_PATH: tools/seurat-signac/v4-r3          # dir location of build files in repo
 
 permissions:
