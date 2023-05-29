@@ -32,3 +32,4 @@ RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 
 ENV RENV_PATHS_LIBRARY renv/library
 RUN R -e "renv::restore()"
+
