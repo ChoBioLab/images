@@ -31,7 +31,7 @@ ENV RENV_PATHS_CACHE=${RENV_PATHS_CACHE_CONTAINER}
 VOLUME "${RENV_PATHS_CACHE_HOST}:${RENV_PATHS_CACHE_CONTAINER}"
 
 RUN R -e "install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))"
-RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
+RUN R -e "remotes::install_version('renv', version = '${RENV_VERSION}', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
 ENV RENV_PATHS_LIBRARY renv/library
 RUN R -e "renv::restore()"
