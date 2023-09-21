@@ -5,14 +5,14 @@ on:
     branches:
       - prod
     paths:
-      - 'builds/ps-python-env/v1/**'
+      - 'builds/ibdgc-db-env/v1/**'
 
 env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
   REGISTRY_ALIAS: chobiolab               # aws ecr public alias
   VER:                                    # version of coreSC
-  REPOSITORY: ps-python-env                      # aws ecr repo path
-  BUILD_PATH: builds/ps-python-env/v1          # dir location of build files in repo
+  REPOSITORY: ibdgc-db-env                      # aws ecr repo path
+  BUILD_PATH: builds/ibdgc-db-env/v1          # dir location of build files in repo
 
 permissions:
   contents: read
