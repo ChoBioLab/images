@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y git
 WORKDIR /app
 
 # Clone your GitHub repository into the container
-RUN git clone https://github.com/ibdgc/ibdgc-db.git .
+RUN git clone -b pschumm/reporting https://github.com/ibdgc/ibdgc-db.git .
 
 # Copy the requirements file into the container
 COPY requirements.txt .
