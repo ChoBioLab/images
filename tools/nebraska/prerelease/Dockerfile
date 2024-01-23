@@ -10,4 +10,5 @@ RUN apt-get update \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir .
+RUN pip install --no-cache-dir . \
+    && rm -rf ./*
