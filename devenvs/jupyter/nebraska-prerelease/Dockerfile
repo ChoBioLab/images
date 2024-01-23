@@ -12,4 +12,4 @@ ENV HOME=/home/jovyan
 WORKDIR $HOME
 USER jovyan
 
-CMD ["jupyterhub"]
+CMD ["jupyterhub-singleuser"]
