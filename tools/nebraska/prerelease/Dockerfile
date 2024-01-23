@@ -1,7 +1,7 @@
 FROM python:3.10.4-slim
 
 WORKDIR /app
-ADD crispr/ crispr
+ADD . /app
 
 MAINTAINER christopher.tastad@mssm.edu
 
@@ -10,4 +10,4 @@ RUN apt-get update \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install crispr
+RUN pip install --no-cache-dir .
