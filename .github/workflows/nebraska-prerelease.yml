@@ -3,7 +3,7 @@ name: Deploy nebraska to Amazon ECR
 on:
   push:
     branches:
-      - prod
+      - main
     paths:
       - "tools/nebraska/prerelease/**"
 
