@@ -1,7 +1,7 @@
 FROM python:3.10.4-slim
 
 WORKDIR /app
-ADD . /app
+ADD crispr/ crispr
 
 MAINTAINER christopher.tastad@mssm.edu
 
