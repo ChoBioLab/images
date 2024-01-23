@@ -10,5 +10,4 @@ RUN apt-get update \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN cd crispr \
-    && pip install --no-cache-dir .
+RUN pwd -P
