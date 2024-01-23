@@ -5,7 +5,7 @@ on:
     branches:
       - prod
     paths:
-      - "devenvs/nebraska/prerelease/**"
+      - "devenvs/jupyter/nebraska-prerelease/**"
 
 env:
   AWS_REGION: us-east-1 # set this to your preferred AWS region, e.g. us-west-1
