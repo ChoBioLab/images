@@ -12,7 +12,7 @@ env:
   REGISTRY_ALIAS: chobiolab # aws ecr public alias
   VER: nebraska-prerelease # version
   REPOSITORY: jupyter # aws ecr repo path
-  BUILD_PATH: devenvs/nebraska/prerelease # dir location of build files in repo
+  BUILD_PATH: devenvs/jupyter/nebraska-prerelease # dir location of build files in repo
 
 permissions:
   contents: read
