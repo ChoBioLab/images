@@ -32,5 +32,4 @@ WORKDIR /src
 EXPOSE 1313
 
 # Set default command to start Hugo server
-ENTRYPOINT ["hugo"]
-
+CMD ["hugo", "server", "--bind", "$HUGO_BIND", "--destination", "$HUGO_DESTINATION", "--environment", "$HUGO_ENV"]
