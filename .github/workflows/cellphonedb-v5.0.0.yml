@@ -5,14 +5,14 @@ on:
     branches:
       - prod
     paths:
-      - 'tools/cellphoneDB/**'
+      - 'tools/cellphoneDB/v5.0.0/**'
 
 env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
   REGISTRY_ALIAS: chobiolab                # aws ecr public alias
   REPOSITORY: cellphonedb      # aws ecr repo path
-  VER: 3.1.0                         # version of coreSC
-  BUILD_PATH: tools/cellphoneDB                 # dir location of build files in repo
+  VER: 5.0.0                         # version
+  BUILD_PATH: tools/cellphoneDB/v5.1.0                 # dir location of build files in repo
 
 permissions:
   contents: read
