@@ -9,7 +9,8 @@ RUN apt-get update \
     libharfbuzz-dev \
     libfribidi-dev \
     && pip install --upgrade pip \
-    && pip install cellphonedb==3.1.0
+    && pip install cellphonedb==3.1.0 \
+    && pip install markupsafe==2.0.1
 
 RUN R -e "install.packages('devtools', repos = c(CRAN = 'https://cloud.r-project.org'))"
 RUN R -e "install.packages('BiocManager', repos = c(CRAN = 'https://cloud.r-project.org'))"
