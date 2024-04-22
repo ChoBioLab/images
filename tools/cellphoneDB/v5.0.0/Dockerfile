@@ -20,4 +20,3 @@ RUN R -e "devtools::install_github('zktuong/ktplots', dependencies = TRUE)"
 WORKDIR /data
 
 CMD ["cellphonedb"]
-
