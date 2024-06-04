@@ -16,8 +16,8 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --upgrade pip
 
 # Install the stlearn package and python deps
-RUN pip install numpy==1.22.4
 RUN pip install -U stlearn
+RUN pip install numpy==1.22.4
 
 # Modify the source code
 RUN sed -i '77s/np.int/np.int64/' /usr/local/lib/python3.8/site-packages/stlearn/tools/microenv/cci/permutation.py
