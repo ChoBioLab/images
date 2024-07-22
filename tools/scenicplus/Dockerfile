@@ -1,16 +1,24 @@
 FROM python:3.11.9-slim
 
-# Install Git and Conda
+# Install Git, Wget, Curl, and build tools
 RUN apt-get update && \
-    apt-get install -y git wget && \
+    apt-get install -y git wget curl build-essential libffi-dev python3-dev libssl-dev libxml2-dev libxslt1-dev zlib1g-dev && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
-    /bin/bash ~/miniconda.sh -b -p /opt/conda && \
-    rm ~/miniconda.sh
+    rm -rf /var/lib/apt/lists/*
+
+# Install Rust and Cargo
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+# Set the path for Cargo
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# Install Conda
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh && \
+    /bin/bash /tmp/miniconda.sh -b -p /opt/conda && \
+    rm /tmp/miniconda.sh
 
 # Set the path for Conda
-ENV PATH=/opt/conda/bin:$PATH
+ENV PATH="/opt/conda/bin:${PATH}"
 
 # Set the working directory
 WORKDIR /app
@@ -24,7 +32,9 @@ RUN conda env create -f environment.yml && \
     conda clean -afy
 
 # Activate the Conda environment
-SHELL ["conda", "run", "-n", "scenicplus", "/bin/bash", "-c"]
+ENV CONDA_DEFAULT_ENV="scenicplus"
+ENV CONDA_PREFIX="scenicplus"
+ENV PATH="/opt/conda/envs/scenicplus/bin:${PATH}"
 
-# Install additional dependencies from requirements.txt
+# Install dependencies from requirements.txt within the activated Conda environment
 RUN pip install --no-cache-dir -r requirements.txt

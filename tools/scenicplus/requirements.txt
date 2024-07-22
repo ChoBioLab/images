@@ -141,8 +141,8 @@ pybedtools==0.9.1
 pybigtools==0.1.2
 pyBigWig==0.3.22
 pybiomart==0.2.0
-pycistarget @ git+https://github.com/aertslab/pycistarget@8cd78f110f4eeeb38d8f7006a1100a13d636d984
-pycisTopic @ git+https://github.com/aertslab/pycisTopic@d6a2f8c832c14faae07def1d3ad8755531f50ad5
+pycistarget @ git+https://github.com/aertslab/pycistarget
+pycisTopic @ git+https://github.com/aertslab/pycisTopic
 pyfasta==0.5.2
 pygam==0.9.0
 Pygments==2.17.2
@@ -151,7 +151,7 @@ pyparsing==3.1.2
 pyranges==0.0.111
 pyrle==0.0.39
 pysam==0.22.0
-pyscenic @ git+https://github.com/aertslab/pySCENIC@d2309fed83759a0e66e0a995ef3d2f40bf4d6c1a
+pyscenic @ git+https://github.com/aertslab/pySCENIC@master
 python-dateutil==2.9.0.post0
 python-utils==3.8.2
 pytz==2024.1
