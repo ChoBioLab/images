@@ -1,18 +1,18 @@
-name: Deploy corescpy v0.2.0 to Amazon ECR
+name: Deploy corescpy v0.2.1 to Amazon ECR
 
 on:
   push:
     branches:
       - prod
     paths:
-      - "tools/corescpy/v0.2.0/**"
+      - "tools/corescpy/v0.2.1/**"
 
 env:
   AWS_REGION: us-east-1 # set this to your preferred AWS region, e.g. us-west-1
   REGISTRY_ALIAS: chobiolab # aws ecr public alias
-  VER: v0.2.0 # version
+  VER: v0.2.1 # version
   REPOSITORY: corescpy # aws ecr repo path
-  BUILD_PATH: tools/corescpy/v0.2.0 # dir location of build files in repo
+  BUILD_PATH: tools/corescpy/v0.2.1 # dir location of build files in repo
 
 permissions:
   contents: read
