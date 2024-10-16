@@ -10,8 +10,8 @@ on:
 env:
   AWS_REGION: us-east-1 # set this to your preferred AWS region, e.g. us-west-1
   REGISTRY_ALIAS: chobiolab # aws ecr public alias
-  VER: 1.1.5 # version
   REPOSITORY: sopa # aws ecr repo path
+  VER: 1.1.5 # version
   BUILD_PATH: tools/sopa/v1.1.5 # dir location of build files in repo
 
 permissions:
@@ -47,18 +47,6 @@ jobs:
       # added this line to shorten the SHA tag
       - name: Add SHORT_SHA env property with commit short sha
         run: echo "SHORT_SHA=`echo ${{ github.sha }} | cut -c1-7`" >> $GITHUB_ENV
-
-      - name: Configure SSH Key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.PRIVATE_SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          chmod 644 ~/.ssh/known_hosts
-
-      - name: Clone Private Repo
-        run: |
-          git clone --branch $VER git@github.com:ChoBioLab/corescpy.git $BUILD_PATH/corescpy
 
       - name: Build, tag, and push docker image to Amazon ECR Public
         env:
