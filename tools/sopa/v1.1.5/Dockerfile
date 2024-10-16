@@ -36,4 +36,3 @@ RUN cd sopa && \
 
 # Set the default command to activate the conda environment and run bash
 CMD ["conda", "run", "-n", "sopa", "/bin/bash"]
-
