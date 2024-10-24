@@ -22,21 +22,24 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -
 # Add conda to path
 ENV PATH="/opt/conda/bin:${PATH}"
 
-# Clone the sopa repository
-RUN git clone https://github.com/gustaveroussy/sopa.git --branch v1.1.5
-
 # Initialize conda in bash and configure
 RUN conda init bash && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc
+
+# Clone the sopa repository
+RUN git clone https://github.com/gustaveroussy/sopa.git --branch v1.1.5
 
 # Create a conda environment and install packages in a single layer
 RUN conda create -n sopa python=3.10 -y && \
     . /opt/conda/etc/profile.d/conda.sh && \
     conda activate sopa && \
     cd sopa && \
-    pip install -e ".[snakemake,cellpose,baysor,tangram]"
+    pip install --no-cache-dir -e ".[snakemake,cellpose,baysor,tangram]" && \
+    conda clean -afy && \
+    rm -rf /root/.cache
 
 # Set the default command to activate the conda environment and run bash
 SHELL ["/bin/bash", "-c"]
 ENTRYPOINT ["conda", "run", "-n", "sopa"]
 CMD ["/bin/bash"]
+
